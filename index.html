@@ -1,63 +1,235 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>BGJC Verification Portal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BGJC Verification Portal</title>
 
-    <style>
-        body{
-            font-family: "Book Antiqua", serif;
-            background:#f5f5f5;
-            margin:0;
-            padding:50px;
-            text-align:center;
-        }
+<style>
 
-        h1{
-            color:#C55A11;
-            margin-bottom:40px;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .card{
-            width:350px;
-            margin:auto;
-            background:white;
-            padding:30px;
-            border-radius:10px;
-            box-shadow:0 0 15px rgba(0,0,0,0.1);
-        }
+body{
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background:#fafafa;
+    color:#333;
+}
 
-        .btn{
-            display:inline-block;
-            background:#ED7D31;
-            color:white;
-            text-decoration:none;
-            padding:12px 25px;
-            border-radius:5px;
-            margin-top:20px;
-        }
+.container{
+    max-width:1200px;
+    margin:50px auto;
+    padding:0 20px;
+}
 
-        .btn:hover{
-            background:#C55A11;
-        }
-    </style>
+.portal-title{
+    font-size:32px;
+    font-weight:700;
+    color:#222;
+    margin-bottom:8px;
+}
+
+.portal-subtitle{
+    color:#777;
+    margin-bottom:40px;
+}
+
+.modules{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.card{
+    flex:1;
+    min-width:350px;
+    background:#fff;
+    border:1px solid #f0e4db;
+    border-radius:16px;
+    overflow:hidden;
+    transition:all .3s ease;
+    box-shadow:0 2px 10px rgba(0,0,0,0.04);
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.card-body{
+    padding:25px;
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+}
+
+.icon-box{
+    width:80px;
+    height:80px;
+    background:#fff5ef;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:40px;
+    flex-shrink:0;
+}
+
+.card-content h3{
+    font-size:22px;
+    margin-bottom:10px;
+    color:#222;
+}
+
+.card-content p{
+    color:#666;
+    line-height:1.6;
+    font-size:14px;
+}
+
+.card-footer{
+    background:#fffaf7;
+    border-top:1px solid #f2e6dc;
+    padding:18px 25px;
+}
+
+.card-footer a{
+    text-decoration:none;
+    color:#ED7D31;
+    font-weight:600;
+    font-size:15px;
+}
+
+.card-footer a:hover{
+    color:#C55A11;
+}
+
+.footer{
+    text-align:center;
+    margin-top:60px;
+    padding:20px;
+    color:#888;
+    font-size:13px;
+}
+
+.version{
+    position:absolute;
+    top:25px;
+    right:40px;
+    color:#999;
+    font-size:13px;
+}
+
+@media(max-width:768px){
+
+    .modules{
+        flex-direction:column;
+    }
+
+    .card{
+        min-width:100%;
+    }
+
+    .version{
+        position:static;
+        margin-bottom:20px;
+    }
+}
+
+</style>
 
 </head>
 
 <body>
 
-<h1>BGJC Verification Portal</h1>
+<div class="container">
 
-<div class="card">
+    <div class="version">
+        BGJC Verification Portal | Version 1.0
+    </div>
 
-    <h2>Cash Verification Certificate</h2>
+    <h1 class="portal-title">
+        Verification Modules
+    </h1>
 
-    <p>
-        Open Cash Verification Module
+    <p class="portal-subtitle">
+        Choose a module to generate verification certificates.
     </p>
 
-    <a href="cash.html" class="btn">
-        Open Certificate
-    </a>
+    <div class="modules">
+
+        <!-- Cash Verification -->
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <div class="icon-box">
+                    💰
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Cash Verification</h3>
+
+                    <p>
+                        Generate cash verification certificates for audit engagements and physical cash verification assignments.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="card-footer">
+
+                <a href="cash.html">
+                    Generate Certificate →
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Cheque Verification -->
+
+        <div class="card">
+
+            <div class="card-body">
+
+                <div class="icon-box">
+                    📄
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Cheque Verification</h3>
+
+                    <p>
+                        Generate cheque verification certificates for issued, received and physically verified cheques.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="card-footer">
+
+                <a href="cheque.html">
+                    Generate Certificate →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © 2026 BGJC Verification Portal
+    </div>
 
 </div>
 
